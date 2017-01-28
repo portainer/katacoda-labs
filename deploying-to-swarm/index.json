@@ -1,0 +1,37 @@
+{
+	"live": true,
+	"pathwayTitle": "Portainer",
+	"title": "Deploying Portainer to Docker Swarm Cluster",
+	"backend": {
+		"imageid": "docker-swarm"
+	},
+	"environment": {
+		"uilayout": "terminal-iframe",
+		"hideintro": false,
+		"hidefinish": false
+	},
+	"details": {
+		"steps": [
+			{
+				"title": "Step 1 - Deploy Swarm Cluster",
+				"text": "step1.md"
+			},
+			{
+				"title": "Step 2 - Deploy Portainer",
+				"text": "step2.md"
+			},
+			{
+				"title": "Step 3 - Visit UI",
+				"text": "step3.md"
+			}
+		],
+		"intro": {
+			"courseData": "env-init.sh",
+			"code": "launch.sh",
+			"text": "intro.md"
+		},
+		"finish": {
+			"text": "finish.md"
+		}
+	}
+}
