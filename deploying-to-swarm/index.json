@@ -24,8 +24,16 @@
 				"text": "step2.md"
 			},
 			{
-				"title": "Step 3 - Visit UI",
+				"title": "Step 3 - Visit Portainer Dashboard",
 				"text": "step3.md"
+			},
+			{
+				"title": "Step 4 - Deploy Template",
+				"text": "step4.md"
+			},
+			{
+				"title": "Step 5 - Manage Containers",
+				"text": "step5.md"
 			}
 		],
 		"intro": {
