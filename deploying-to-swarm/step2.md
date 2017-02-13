@@ -1,23 +1,10 @@
-With the cluster configured, the next stage is to deploy Portainer.
+With the cluster configured, the next stage is to deploy Portainer. Portainer is deployed as a container running on a Docker Swarm cluster or a Docker host.
 
-Portainer is deployed as a container running on a Docker host or Docker Swarm cluster. This can be done in two ways:
+## Task: Deploy as Swarm Service
 
-## Deploy as Container
+To complete this scenario, deploy Portainer as a Docker Service. By deploying as a Docker Service, Swarm will ensure that the service is always running on a manager, even if the host goes down.
 
-The first way is to deploy Portainer as a container running on a Docker Host. In this case, the command exposes the Portainer dashboard on port _9000_, persists data to the host and connects to the Docker host it's running on.
-
-`docker run -d -p 9000:9000 --name=portainer \
-  -v "/var/run/docker.sock:/var/run/docker.sock" \
-  -v /host/data:/data \
-  portainer/portainer`
-
-Alternatively, if you’re using swarm mode as we are, you can also deploy Portainer as a service in your cluster.
-
-## Deploy as Swarm Service
-
-By deploying as a Docker Service, Swarm will ensure that the service is always running on a manager, even if the host goes down.
-
-The service has the same configuration as a single container, with an added constraint that it only runs on a manager node.
+The service exposes the port _9000_ and stores the internal Portainer data in the directory _/host/data_. There is an added constraint that the container should only run on a manager node.
 
 ```
 docker service create \
@@ -28,3 +15,12 @@ docker service create \
     portainer/portainer \
     -H tcp://[[HOST_IP]]:2377
 ```{{execute HOST1}}
+
+## Deploy as Container
+
+An alternative way of running Portainer is directly on a host. In this case, the command exposes the Portainer dashboard on port _9000_, persists data to the host and connects to the Docker host it's running on via the _docker.sock_ file.
+
+`docker run -d -p 9000:9000 --name=portainer \
+  -v "/var/run/docker.sock:/var/run/docker.sock" \
+  -v /host/data:/data \
+  portainer/portainer`

@@ -1,6 +1,6 @@
 One of the many features of Portainer is it's available to deploy services based on pre-defined containers.
 
-![](img src="https://katacoda.com/portainer/assets/deploying-to-swarm/step4-1.png")
+![](https://katacoda.com/portainer/assets/deploying-to-swarm/step4-1.png)
 
 ## Task - Deploy nginx
 
