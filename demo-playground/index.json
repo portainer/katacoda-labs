@@ -1,7 +1,7 @@
 {
-	"live": true,
+	"live": false,
 	"pathwayTitle": "Portainer",
-	"title": "Deploying Portainer to Docker Swarm Cluster",
+	"title": "Demo Playground",
 	"backend": {
 		"port": 9090,
 		"imageid": "docker-swarm"
