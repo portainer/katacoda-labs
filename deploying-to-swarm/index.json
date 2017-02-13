@@ -3,7 +3,7 @@
 	"pathwayTitle": "Portainer",
 	"title": "Deploying Portainer to Docker Swarm Cluster",
 	"backend": {
-		"port": 9090,
+		"port": 9000,
 		"imageid": "docker-swarm"
 	},
 	"environment": {
