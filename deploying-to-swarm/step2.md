@@ -4,7 +4,7 @@ With the cluster configured, the next stage is to deploy Portainer. Portainer is
 
 To complete this scenario, deploy Portainer as a Docker Service. By deploying as a Docker Service, Swarm will ensure that the service is always running on a manager, even if the host goes down.
 
-The service exposes the port _9000_ and stores the internal Portainer data in the directory _/host/data_. When Portainer starts, it connects over tcp to the Docker Swarm Manger, in this running on port _2377_. This port may vary should be kept secure and not exposed publicly.
+The service exposes the port _9000_ and stores the internal Portainer data in the directory _/host/data_. When Portainer starts, it connects using the _docker.sock_ to the Docker Swarm Manger.
 
 There is an added constraint that the container should only run on a manager node.
 
